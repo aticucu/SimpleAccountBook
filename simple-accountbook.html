@@ -1,0 +1,52 @@
+<head>
+    <title>simple-accountbook</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <header>
+            <h1>Simple AccountBook</h1>
+        </header>
+        <div class="col-lg-3 col-md-6 text-center">
+
+            <form class="new-deposit">
+                <input type="text" name="deposit" placeholder="Add new deposit">
+            </form>
+            <ul>
+                {{#each deposits}}
+                    {{> deposit}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 text-center">
+
+            <form class="new-withdraw">
+                <input type="text" name="withdraw" placeholder="Add new withdrawal">
+            </form>
+            <ul>
+                {{#each withdraws}}
+                    {{> withdraw}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+
+<template name="deposit">
+    <li class="{{#if checked}}checked{{/if}}">
+        <button class="delete"> &times; </button>
+        <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+        <span class="deposit">{{depositAmount}}</span>
+    </li>
+</template>
+
+<template name="withdraw">
+    <li class="{{#if checked}}checked{{/if}}">
+        <button class="delete"> &times; </button>
+        <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+        <span class="withdraw">{{withdrawAmount}}</span>
+    </li>
+</template>
