@@ -1,4 +1,3 @@
-/* CSS declarations go here */
 body {
     font-family: sans-serif;
     background-color: #315481;
@@ -18,10 +17,14 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
     min-height: 100%;
     background: white;
+}
+
+.row-header {
+    text-align: left;
 }
 
 header {
@@ -51,7 +54,7 @@ form {
 
 .new-deposit input {
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: 10px 0px 0px 10px;
     background: transparent;
     border: none;
     width: 100%;
@@ -66,7 +69,7 @@ form {
 
 .new-withdraw input {
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: 10px 0px 0px 10px;
     background: transparent;
     border: none;
     width: 100%;
