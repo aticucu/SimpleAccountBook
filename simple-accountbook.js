@@ -14,6 +14,30 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.body.helpers({
+    total_deposit: function () {
+      var deposits = Deposits.find();
+      var total_deposit_amount = 0;
+      deposits.forEach( function (deposit) {
+        total_deposit_amount += deposit.depositAmount;
+      });
+      if (isNaN(total_deposit_amount)) total_deposit_amount = 0;
+      return total_deposit_amount;
+    }
+  })
+
+  Template.body.helpers({
+    total_withdraw: function () {
+      var withdraws = Withdraws.find();
+      var total_withdraw_amount = 0;
+      withdraws.forEach( function (withdraw) {
+        total_withdraw_amount += withdraw.withdrawAmount;
+      });
+      if (isNaN(total_withdraw_amount)) total_withdraw_amount = 0;
+      return total_withdraw_amount;
+    }
+  })
+
   Template.body.events({
     "submit .new-deposit": function (event) {
       event.preventDefault();

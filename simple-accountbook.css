@@ -96,6 +96,10 @@ ul {
     position: relative;
 }
 
+.total {
+    padding: 15px;
+}
+
 li {
     position: relative;
     list-style: none;
