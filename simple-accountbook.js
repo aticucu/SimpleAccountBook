@@ -45,7 +45,7 @@ if (Meteor.isClient) {
       var amount = event.target.deposit.value;
       Deposits.insert({
         depositAmount: Number(amount),
-        createdAt: new Date()
+        createdAt: new Date().toISOString().slice(0, 10)
       });
 
       event.target.deposit.value = "";
@@ -59,7 +59,7 @@ if (Meteor.isClient) {
       var amount = event.target.withdraw.value;
       Withdraws.insert({
         withdrawAmount: Number(amount),
-        createdAt: new Date()
+        createdAt: new Date().toISOString().slice(0, 10)
       });
 
       event.target.withdraw.value = "";
